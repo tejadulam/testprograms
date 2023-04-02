@@ -128,7 +128,7 @@ Let connections = [
 """
 
 # write your solution here for the above problem
-connections = [
+data = [
     ('Amsterdam', 'Dublin', 100),
     ('Amsterdam', 'Rome', 140),
     ('Rome', 'Warsaw', 130),
@@ -140,11 +140,16 @@ connections = [
     ('Dublin', 'Rome', 170),
     ]
 c = 0
-for x in connections:
-    if x[1]=="Rome":
+m = []
+for i in data:
+    if i[1] == "Rome":
         c+=1
-print("city_to equal to 'Rome':",c)
-
+        m.append(i[2])
+sum = 0
+for i in m:
+    sum+=i
+    avg = sum/len(m)
+print(f"Number of connections to rome is {c}, the average flight time to rome is{avg}")
 
 """
 A company allows its employees to work in a hybrid model. Here given a dictionary of employee's work status on a day as input,
@@ -200,3 +205,13 @@ In the output, keys are word lengths and values are their count.
 """
 
 # write your solution here for the above problem
+from collections import Counter
+r = {}
+sen = "A far cat is on the mat"
+data = sen.split()
+for x in data:
+    r[x] = len(x)
+r = r.values()
+c = dict(Counter(r))
+print(c)
+
