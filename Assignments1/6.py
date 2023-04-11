@@ -27,7 +27,7 @@ pass_mark = 40
 
 avg_marks = {}
 
-with open('student_marks.csv','r') as csvfile:
+with open('C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/student_marks.csv','r') as csvfile:
     data = csv.DictReader(csvfile)
     for record in data:
         if int(record['Telugu']) >= pass_mark:

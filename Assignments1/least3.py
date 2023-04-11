@@ -82,7 +82,7 @@ sub_faculty = {
 
 least_mark = {}
 
-with open('student_marks.csv','r') as csvfile:
+with open('C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/student_marks.csv','r') as csvfile:
     data = csv.DictReader(csvfile)
     for marks in data:
         if int(marks['Telugu']) <= 40:
