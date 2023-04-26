@@ -24,7 +24,7 @@ def top_dir_with_max_movies(file_name):
     return dir
 top_dir = top_dir_with_max_movies('imdb_assignment\imdb_assignment\imdb_movies.json')
 top_director = max(top_dir.items(),key=lambda x: x[1])
-print(top_director)
+print(f"the top director is {top_director[0]} and his movie are {top_director[1]}")
 
 
 def popular_genere_watched_by_most(file_name):
@@ -41,22 +41,30 @@ top_genere_watched = popular_genere_watched_by_most('imdb_assignment\imdb_assign
 top_genere_watched = max(top_genere_watched.items(),key=lambda x: x[1])
 print(f"The popular genere watched by audiance is {top_genere_watched}")
     
-
-
 def get_top_ten_movies_by_imdb_score(file_name):
     imdb_movie_data = read_json_file(file_name)
-    result = sorted(imdb_movie_data,key=lambda x:x['imdb_score'], reverse=True)[:10]
-    return [(x['name'],x['imdb_score']) for x in  result]
+    sorted_movies = sorted(imdb_movie_data, key=lambda x: x['imdb_score'], reverse=True)
+    top_10_movies = sorted_movies[:10]
+    return top_10_movies
+top_movies = get_top_ten_movies_by_imdb_score('imdb_assignment\imdb_assignment\imdb_movies.json')
+for movie in top_movies:
+    print(f"Movie: {movie['name']} with IMDb score: {movie['imdb_score']}")
 
-    # write your logic here to solve the query
 
 
 def least_watched_movie_by_imdb_score(file_name):
     imdb_movie_data = read_json_file(file_name)
-    res = sorted(imdb_movie_data, key = lambda x:x['imdb_score'])
-    least_watchedmovie = res[0]
-    return least_watchedmovie['name']
-    
+    d ={}
+    for i in imdb_movie_data:
+        movie_name = i["name"]
+        d[movie_name] = i["imdb_score"]
+    return d
+
+least_watched_movie_imdb_score = least_watched_movie_by_imdb_score('imdb_assignment\imdb_assignment\imdb_movies.json')
+least_watched_movie_imdb_score = min(least_watched_movie_imdb_score.items(),key = lambda x:x[1])
+
+print(f"the least watched movie based on their imdb score is : {least_watched_movie_imdb_score}")
+
 
 
 def get_best_director_in_first_hundred_movies(file_name):
@@ -68,16 +76,15 @@ def get_best_director_in_first_hundred_movies(file_name):
         direc = movie['director']
         directors[direc] = directors.get(direc,0) +1
         best_dir = max(directors, key=directors.get)
+        print(f"best director in first hundered movies is:")
         return best_dir
-    
-    # write your logic here to solve the query
      
   
 # check the data being returned by read_json_file
-print(read_json_file('imdb_assignment\imdb_assignment\imdb_movies.json'))
+# print(read_json_file('imdb_assignment\imdb_assignment\imdb_movies.json'))
 
-print(f"The top director is {top_director[0]} and his movies are {top_director[1]}")
-print(popular_genere_watched_by_most('imdb_assignment\imdb_assignment\imdb_movies.json'))
-print(get_top_ten_movies_by_imdb_score('imdb_assignment\imdb_assignment\imdb_movies.json'))
-print(least_watched_movie_by_imdb_score('imdb_assignment\imdb_assignment\imdb_movies.json'))
+# print(top_dir_with_max_movies('imdb_assignment\imdb_assignment\imdb_movies.json'))
+# print(popular_genere_watched_by_most('imdb_assignment\imdb_assignment\imdb_movies.json'))
+# print(get_top_ten_movies_by_imdb_score('imdb_assignment\imdb_assignment\imdb_movies.json'))
+# print(least_watched_movie_by_imdb_score('imdb_assignment\imdb_assignment\imdb_movies.json'))
 print(get_best_director_in_first_hundred_movies('imdb_assignment\imdb_assignment\imdb_movies.json'))
