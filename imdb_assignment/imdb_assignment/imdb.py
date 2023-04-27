@@ -13,7 +13,6 @@ def read_json_file(file_name):
 
 def top_dir_with_max_movies(file_name):
     imdb_movie_data = read_json_file(file_name)
-    imdb_movie_data = read_json_file(file_name)
     dir = {}
     for i in imdb_movie_data:
         director = i['director']
@@ -69,15 +68,19 @@ print(f"the least watched movie based on their imdb score is : {least_watched_mo
 
 def get_best_director_in_first_hundred_movies(file_name):
     imdb_movie_data = read_json_file(file_name)
-    movies = imdb_movie_data[:100]
-    print(movies)
-    directors = {}
-    for movie in movies:
-        direc = movie['director']
-        directors[direc] = directors.get(direc,0) +1
-        best_dir = max(directors, key=directors.get)
-        print(f"best director in first hundered movies is:")
-        return best_dir
+    # write your logic here to solve the query
+    d = {}
+    for movie in imdb_movie_data:
+        director = movie["director"]
+        d[director] = movie["imdb_score"]
+    return d
+best_director_in_hundred_movies = get_best_director_in_first_hundred_movies('imdb_assignment\imdb_assignment\imdb_movies.json')
+best_director_in_hundred_movies= sorted(best_director_in_hundred_movies, key=lambda x: x[1], reverse=True)
+best_director_in_hundred_movies = best_director_in_hundred_movies[:100]
+best_director_in_hundred_movies = max(best_director_in_hundred_movies, key=lambda x: x[1])
+print(f"the best director in first hundred movies is : {best_director_in_hundred_movies}")
+  
+    
      
   
 # check the data being returned by read_json_file
@@ -87,4 +90,4 @@ def get_best_director_in_first_hundred_movies(file_name):
 # print(popular_genere_watched_by_most('imdb_assignment\imdb_assignment\imdb_movies.json'))
 # print(get_top_ten_movies_by_imdb_score('imdb_assignment\imdb_assignment\imdb_movies.json'))
 # print(least_watched_movie_by_imdb_score('imdb_assignment\imdb_assignment\imdb_movies.json'))
-print(get_best_director_in_first_hundred_movies('imdb_assignment\imdb_assignment\imdb_movies.json'))
+# print(get_best_director_in_first_hundred_movies('imdb_assignment\imdb_assignment\imdb_movies.json'))
