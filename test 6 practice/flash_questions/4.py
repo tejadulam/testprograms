@@ -3,9 +3,9 @@
 
 def first_non_repeating_char(string):
     '''
-     This function will return the first non repeating character in string
+    This function will return the first non repeating character in string
 
-     Parameters:
+    Parameters:
         input_string : string
 
     Returns:
