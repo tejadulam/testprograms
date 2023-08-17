@@ -41,7 +41,7 @@ def highest_pass_percentage(student_marks_csv, faculty_details_csv):
                 msg = f'The faculty with least pass percentage {i.get("Faculty")} and his subject is {i.get("Subject")}'
                 print(i)
     return msg
-print(highest_pass_percentage('Assignments1/student_marks.csv', 'Assignments1/subject_faculty.csv'))
+print(highest_pass_percentage('C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/student_marks.csv', 'C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/subject_faculty.csv'))
 
 
 

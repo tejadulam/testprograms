@@ -16,7 +16,6 @@ faculty = {
     'Social' : 'Krishna Reddy'
 }
 
-
 sub_faculty = {}
 
 with open('C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/student_marks.csv','r') as file:

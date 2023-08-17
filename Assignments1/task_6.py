@@ -48,7 +48,7 @@ def avg_marks_each_sub(student_marks):
         print(f"Ignoring failures, the Average mark for {Subjects[4][0]} is {round(Subjects[4][1])}")
         print(f"Ignoring failures,the Average mark for {Subjects[5][0]} is {round(Subjects[5][1])}")
         return (Subjects)
-print(avg_marks_each_sub('Assignments1/student_marks.csv'))
+print(avg_marks_each_sub('C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/student_marks.csv'))
 
 
 # 6.What is the average mark for each subject, (ignore failures)?

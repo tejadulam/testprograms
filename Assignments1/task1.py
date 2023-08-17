@@ -41,5 +41,6 @@ def fac_with_high_studentcount(students_marks_csv,faculty_csv):
                 msg = f'The faculty with highest student count who got more than 90 percent is {i.get("Faculty")} and his subject is {i.get("Subject")}'
                 print(i)
     return msg
-print(fac_with_high_studentcount('Assignments1/student_marks.csv', 'Assignments1/subject_faculty.csv'))
+print(fac_with_high_studentcount('C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/student_marks.csv', 'C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/subject_faculty.csv'))
+
 

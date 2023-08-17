@@ -14,4 +14,4 @@ def student_least_marks_totla(student_marks):
         msg7 = f"The Student is {students[0][0]} and his Least mark is {students[0][1]}"
     
     return msg7
-print(student_least_marks_totla('Assignments1/student_marks.csv'))
+print(student_least_marks_totla('C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/student_marks.csv'))

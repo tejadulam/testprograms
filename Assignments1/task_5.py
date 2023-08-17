@@ -14,4 +14,4 @@ def top_student_max_subject(student_marks, subject):
 
     return msg
 
-print(top_student_max_subject('Assignments1/student_marks.csv', 'Maths'))
+print(top_student_max_subject('C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/student_marks.csv', 'Maths'))

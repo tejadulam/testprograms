@@ -1,5 +1,5 @@
 import json
-with open("menu_realtime\menu_realtime\menu items.json") as f:
+with open("C:/Users/teju2/Desktop/workstation/testprograms/menu_realtime/menu_realtime/menu items.json") as f:
     data = json.load(f)
     # print(data)
 

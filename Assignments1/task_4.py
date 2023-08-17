@@ -15,6 +15,6 @@ def top_student_max_total(student_marks):
 
     return msg4
 
-print(top_student_max_total('Assignments1/student_marks.csv'))
+print(top_student_max_total('C:/Users/teju2/Desktop/workstation/testprograms/Assignments1/student_marks.csv'))
 
 # print(f"The Top Student is {students[0][0]} and his top mark is {students[0][1]}")
